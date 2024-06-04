@@ -1,5 +1,5 @@
 import React from 'react'
-import ecoland from '../assets/ecoland.png'
+import ecoland from '../assets/ecolandnew.png'
 const Body = () => {
   return (
     <div className='w-full bg-white py-16 px-4'>
@@ -11,11 +11,10 @@ const Body = () => {
             CAPSTONE
           </h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi cum optio suscipit nihil facilis facere, sed consequatur similique quod animi nulla inventore sint voluptatum mollitia exercitationem necessitatibus repudiandae doloremque dolore!
+            EcoLand Platform Penyewaan Lahan untuk Bisnis Hijau di Indonesia. Proyek ini dibuat dengan tujuan memfasilitasi proses penyewaan tanah untuk usaha dengan kategori “Bisnis Hijau” di Indonesia.
           </p>
           <button className='bg-green-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 md:mx-0'>CARI LAHAN</button>
         </div>
-
 
       </div>
     </div>
