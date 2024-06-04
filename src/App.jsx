@@ -6,6 +6,7 @@ import Body from './components/Body';
 import Cards from './components/Cards';
 import Footer from './components/Footer';
 import Login from './components/Login';
+import Register from './components/Register'; 
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           </>
         } />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} /> {/* rute untuk halaman registrasi */}
       </Routes>
     </Router>
   );
