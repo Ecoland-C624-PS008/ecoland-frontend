@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link untuk membuat tautan
 
@@ -5,7 +6,7 @@ const Register = () => {
   // Logika pendaftaran pengguna
   
   return (
-    <div className="flex justify-center items-center h-screen bg-[#b7efc5]">
+    <div className="flex justify-center items-center h-screen bg-green-500">
       <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-lg rounded-lg">
         <h2 className="text-3xl font-bold text-center text-[#16db65]">Register</h2>
         <form className="space-y-4">
@@ -33,11 +34,11 @@ const Register = () => {
               placeholder="Enter your password"
             />
           </div>
-          <button className="w-full px-4 py-2 text-white bg-[#16db65] rounded-lg hover:bg-[#14c053]">Register</button>
+          <button className="w-full px-4 py-2 text-white font-bold bg-[#16db65] rounded-lg hover:bg-[#14c053]">Register</button>
         </form>
         {/* Tautan untuk kembali ke halaman login */}
         <p className="text-center text-sm text-gray-700">
-          Sudah punya akun? <Link to="/login" className="text-[#16db65]">Login disini</Link>
+          Sudah punya akun? <Link to="/login" className="text-[#16db65] font-bold">Masuk disini</Link>
         </p>
       </div>
     </div>
