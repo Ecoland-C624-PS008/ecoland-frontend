@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import sewa from '../assets/sewa.jpg'
 import iklan from '../assets/iklan.jpg'

@@ -1,9 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 
 const Login = () => {
   return (
-    <div className="flex justify-center items-center h-screen bg-[#b7efc5]">
+    <div className="flex justify-center items-center h-screen bg-green-500">
       <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-lg rounded-lg">
         <h2 className="text-3xl font-bold text-center text-[#16db65]">Login</h2>
         <form className="space-y-4">
