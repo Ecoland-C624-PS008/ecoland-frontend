@@ -17,7 +17,7 @@ const Hero = () => {
           typeSpeed={120} 
           backSpeed={140} loop
           />
-        <button className='bg-green-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 font-bold'>CARI LAHAN</button>
+        <button className='bg-green-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 font-bold hover:bg-green-600'>CARI LAHAN</button>
       </div>
     </div>
   )

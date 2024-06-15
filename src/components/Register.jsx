@@ -34,11 +34,11 @@ const Register = () => {
               placeholder="Enter your password"
             />
           </div>
-          <button className="w-full px-4 py-2 text-white bg-[#16db65] rounded-lg hover:bg-[#14c053]">Register</button>
+          <button className="w-full px-4 py-2 text-white font-bold bg-[#16db65] rounded-lg hover:bg-[#14c053]">Register</button>
         </form>
         {/* Tautan untuk kembali ke halaman login */}
         <p className="text-center text-sm text-gray-700">
-          Sudah punya akun? <Link to="/login" className="text-[#16db65]">Login disini</Link>
+          Sudah punya akun? <Link to="/login" className="text-[#16db65] font-bold">Masuk disini</Link>
         </p>
       </div>
     </div>
