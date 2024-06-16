@@ -6,7 +6,7 @@ import { FaUserCircle, FaTachometerAlt, FaTree, FaExchangeAlt, FaFileContract, F
 
 const Sidebar = ({ isOpen }) => {
   return (
-    <div className={`h-screen w-64 bg-gray-800 text-white fixed top-16 md:static flex flex-col transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
+    <div className={`h-screen w-64 bg-gray-800 text-white fixed top-14 left-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
       <div className="flex items-center p-4">
         <div className="ml-4 flex items-center">
           <FaUserCircle className="mr-4" size="30" />
