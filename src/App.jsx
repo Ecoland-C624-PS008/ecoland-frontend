@@ -13,6 +13,7 @@ import LandAdmin from './pages/LandAdmin';
 import TransactionAdmin from './pages/TransactionAdmin';
 import UserAdmin from './pages/UserAdmin';
 import RentalAdmin from './pages/RentalAdmin';
+import Profile from './components/main/Profile';
 
 function App() {
   return (
@@ -44,6 +45,12 @@ function App() {
         <Route path="/transactions" element={<TransactionAdmin />} />
         <Route path="/land-rental" element={<RentalAdmin />} />
         <Route path="/users" element={<UserAdmin />} />
+        <Route path="/profile" element={
+          <>
+            <Navbar />
+            <Profile />
+          </>
+        } /> {}
       </Routes>
     </Router>
   );
