@@ -8,22 +8,42 @@ import Cards from './components/Cards';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register'; 
+import DashboardAdmin from './pages/DashboardAdmin';
+import LandAdmin from './pages/LandAdmin';
+import TransactionAdmin from './pages/TransactionAdmin';
+import UserAdmin from './pages/UserAdmin';
+import RentalAdmin from './pages/RentalAdmin';
 
 function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={
           <>
+            <Navbar />
             <Hero />
             <Body />
             <Cards />
             <Footer />
           </>
         } />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} /> {/* rute untuk halaman registrasi */}
+        <Route path="/login" element={
+          <>
+            <Navbar />
+            <Login />
+          </>
+        } />
+        <Route path="/register" element={
+          <>
+            <Navbar />
+            <Register />
+          </>
+        } />
+        <Route path="/dashboard" element={<DashboardAdmin />} />
+        <Route path="/lands" element={<LandAdmin />} />
+        <Route path="/transactions" element={<TransactionAdmin />} />
+        <Route path="/land-rental" element={<RentalAdmin />} />
+        <Route path="/users" element={<UserAdmin />} />
       </Routes>
     </Router>
   );
