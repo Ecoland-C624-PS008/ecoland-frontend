@@ -15,6 +15,7 @@ const LandAdmin = () => {
       <Sidebar isOpen={isOpen} />
       <div className="flex-grow bg-gray-100">
         <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+        {/* MAIN CONTENT */}
         <div className="p-6 mt-16 md:ml-[250px]">
           <div className="w-full mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <h2 className="text-2xl font-bold mb-4">Form Lahan</h2>

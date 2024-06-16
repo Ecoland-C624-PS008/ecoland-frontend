@@ -15,6 +15,7 @@ const DashboardAdmin = () => {
       <Sidebar isOpen={isOpen} />
       <div className="flex-grow bg-gray-100">
         <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+        {/* Main content */}
         <div className="p-6 mt-16 md:ml-[250px]">
           <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
           <p>Welcome to the admin dashboard. Here you can manage lands, transactions, land rentals, and users.</p>

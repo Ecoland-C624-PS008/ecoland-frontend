@@ -15,7 +15,8 @@ const RentalAdmin = () => {
       <Sidebar isOpen={isOpen} />
       <div className="flex-grow bg-gray-100">
         <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />
-        <div className="p-6 mt-16">
+        {/* MAIN CONTENT */}
+        <div className="p-6 mt-16 md:ml-[250px]">
           <h1 className="text-2xl font-bold mb-4">Histori Sewa Lahan</h1>
           <p>Test text</p>
         </div>

@@ -1,21 +1,37 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { FaLeaf } from 'react-icons/fa';
 import { Link } from 'react-router-dom'; 
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleNav = () => {
     setNav(!nav);
   };
 
   return (
-    <div className='flex justify-between items-center h-20 mx-auto px-4 text-white bg-green-500'>
+    <div className={`flex justify-between fixed w-full items-center h-20 mx-auto px-4 text-white bg-green-500 z-10 ${scroll ? 'shadow-xl' : ''}`}>
       <h1 className='w-full text-4xl font-bold text-white'>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
-          <FaLeaf size={20} color="white" style={{ marginRight: '8px' }} />
+          <FaLeaf size={32} color="white" style={{ marginRight: '8px' }} />
           EcoLand
         </Link>
       </h1>
