@@ -20,7 +20,8 @@ const Navbar = () => {
         </Link>
       </h1>
       <ul className='hidden md:flex'>
-        <li className='font-bold text-xl p-4 text-white'><Link to="/login">Login</Link></li> {/* navigasi ke halaman Login */}
+        <li className='font-bold text-l p-2 text-white'><Link to="/login" className='border-2 border-green-800 text-green-800 py-2 px-6 rounded-lg transition duration-300 ease-in-out hover:bg-green-800 hover:text-white'>Masuk</Link></li> {/* navigasi ke halaman Login */}
+        <li className='font-bold text-l p-2 text-white'><Link to="/register" className='border-2 border-green-700 py-2 px-6 rounded-lg bg-green-700 text-white transition duration-300 ease-in-out hover:bg-green-800 hover:border-green-800'>Daftar</Link></li> {/* navigasi ke halaman Register */}
       </ul>
       <div onClick={handleNav} className='block md:hidden'>
           {nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20} />}
