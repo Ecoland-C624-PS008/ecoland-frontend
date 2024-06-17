@@ -16,7 +16,7 @@ const TransactionAdmin = () => {
 
   useEffect(() => {
     if (isError) {
-      navigate("/");
+      navigate("/login");
     }
     if (user && user.role !== "admin") {
       navigate("/dashboard");
