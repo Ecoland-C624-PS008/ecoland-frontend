@@ -58,7 +58,7 @@ const Sidebar = ({ isOpen }) => {
             </Link>
           </li>
           <li className="mb-2">
-            <button onClick={logout} className="flex items-center p-4 hover:bg-red-600">
+            <button onClick={logout} className="w-full font-bold flex items-center p-4 hover:bg-red-600">
               <FaSignOutAlt className="mr-2" />
               Keluar
             </button>
