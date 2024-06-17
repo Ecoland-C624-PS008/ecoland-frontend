@@ -19,7 +19,7 @@ const DashboardAdmin = () => {
       navigate("/");
     }
     if (user && user.role !== "admin") {
-      navigate("/dashboard");
+      navigate("/lands");
     }
   }, [isError, user, navigate]);
 

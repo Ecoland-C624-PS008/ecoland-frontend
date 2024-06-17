@@ -49,9 +49,9 @@ function App() {
             <Register />
           </>
         } />
-        <Route path="/home" element={<MainPage />} />
+        <Route path="/lands" element={<MainPage />} />
         <Route path="/dashboard" element={<DashboardAdmin />} />
-        <Route path="/lands" element={<LandAdmin />} />
+        <Route path="/lands-admin" element={<LandAdmin />} />
         <Route path="/transactions" element={<TransactionAdmin />} />
         <Route path="/land-rental" element={<RentalAdmin />} />
         <Route path="/users" element={<UserAdmin />} />

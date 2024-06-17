@@ -42,16 +42,16 @@ const Navbar = () => {
   return (
     <div className={`flex justify-between fixed w-full items-center h-20 text-white bg-green-500 ${scroll ? 'shadow-xl' : ''}`}>
       <h1 className='w-full text-4xl font-bold text-white'>
-        <Link to="/home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/lands" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
           <FaLeaf size={32} color="white" style={{ marginRight: '8px', marginLeft: '15px' }} />
           EcoLand
         </Link>
       </h1>
       <ul className='hidden md:flex'>
       {user && user.role === "admin" && (
-        <li className='font-bold text-l p-2 text-white'><Link to="/register" className='border-2 border-green-700 py-2 px-6 rounded-lg bg-green-700 text-white transition duration-300 ease-in-out hover:bg-green-800 hover:border-green-800'>Dashboard</Link></li>
+        <li className='font-bold text-l p-2 text-white'><Link to="/dashboard" className='border-2 border-green-700 py-2 px-6 rounded-lg bg-green-700 text-white transition duration-300 ease-in-out hover:bg-green-800 hover:border-green-800'>Dashboard</Link></li>
       )};
-        <button onClick={logout} className="flex items-center p-4 hover:bg-red-600 mr-[15px]">
+        <button onClick={logout} className="bg-red-600 font-bold flex items-center py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-red-700 mr-[15px]">
           <FaSignOutAlt className="mr-2" />
             Keluar
         </button>

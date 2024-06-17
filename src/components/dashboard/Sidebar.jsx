@@ -34,7 +34,7 @@ const Sidebar = ({ isOpen }) => {
             </Link>
           </li>
           <li className="mb-2">
-            <Link to="/lands" className="flex items-center p-4 hover:bg-gray-700">
+            <Link to="/lands-admin" className="flex items-center p-4 hover:bg-gray-700">
               <FaTree className="mr-2" />
               Lands
             </Link>
