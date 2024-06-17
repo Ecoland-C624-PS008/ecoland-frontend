@@ -20,14 +20,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/main" element={
-        <>
-          <Navbar />
-          <Body />
-          <MainPage />
-          <Footer />
-        </>
-        }/>
         <Route path="/" element={
           <>
             <Navbar />
