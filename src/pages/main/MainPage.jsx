@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../../utils/authSlice";
+import Navbar from "../../components/main/Navbar";
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -17,17 +18,18 @@ const MainPage = () => {
     if (isError) {
       navigate("/login");
     }
-    if (user && user.role !== "admin") {
-      navigate("/dashboard");
-    }
   }, [isError, user, navigate]);
 
   return (
-    <div className="p-6 mt-16 md:ml-[250px]">
-      <h1 className="text-2xl font-bold mb-4">Main Page</h1>
-      <p>Test text</p>
+    <div className="flex">
+      <Navbar />
+      <div className="p-6 mt-16">
+        {/* MASUKAN KONTEN MAIN PAGE DI SINI */}
+        <h1 className="text-2xl font-bold mb-4">Homepage</h1>
+        <p>Test text</p>
+      </div>
     </div>
   );
-}
+};
 
 export default MainPage;
