@@ -16,10 +16,10 @@ const UserAdmin = () => {
 
   useEffect(() => {
     if (isError) {
-      navigate("/");
+      navigate("/login");
     }
     if (user && user.role !== "admin") {
-      navigate("/dashboard");
+      navigate("/lands");
     }
   }, [isError, user, navigate]);
 
