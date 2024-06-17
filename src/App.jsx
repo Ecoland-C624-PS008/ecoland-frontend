@@ -15,6 +15,7 @@ import UserAdmin from './pages/UserAdmin';
 import RentalAdmin from './pages/RentalAdmin';
 import Profile from './components/main/Profile';
 import MainPage from './pages/main/MainPage';
+import FormAddLands from './components/dashboard/FormAddLands';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="/lands" element={<MainPage />} />
         <Route path="/dashboard" element={<DashboardAdmin />} />
         <Route path="/lands-admin" element={<LandAdmin />} />
+        <Route path="/lands-admin/add" element={<FormAddLands />} />
         <Route path="/transactions" element={<TransactionAdmin />} />
         <Route path="/land-rental" element={<RentalAdmin />} />
         <Route path="/users" element={<UserAdmin />} />
