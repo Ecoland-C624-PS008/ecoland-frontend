@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+// eslint-disable-next-line no-unused-vars
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getMe } from "../../utils/authSlice";
 
 const Profile = () => {
   const [username, setUsername] = useState('');
@@ -13,6 +17,20 @@ const Profile = () => {
     // Logika untuk menyimpan perubahan ke server atau local storage
     console.log('Changes saved!');
   };
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isError } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    dispatch(getMe());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (isError) {
+      navigate("/");
+    }
+  }, [isError, navigate]);
 
   return (
     <div>
