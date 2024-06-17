@@ -14,11 +14,20 @@ import TransactionAdmin from './pages/TransactionAdmin';
 import UserAdmin from './pages/UserAdmin';
 import RentalAdmin from './pages/RentalAdmin';
 import Profile from './components/main/Profile';
+import MainPage from './pages/main/MainPage';
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/main" element={
+        <>
+          <Navbar />
+          <Body />
+          <MainPage />
+          <Footer />
+        </>
+        }/>
         <Route path="/" element={
           <>
             <Navbar />
@@ -40,6 +49,7 @@ function App() {
             <Register />
           </>
         } />
+        <Route path="/home" element={<MainPage />} />
         <Route path="/dashboard" element={<DashboardAdmin />} />
         <Route path="/lands" element={<LandAdmin />} />
         <Route path="/transactions" element={<TransactionAdmin />} />

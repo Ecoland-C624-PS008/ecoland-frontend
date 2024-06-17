@@ -1,27 +1,35 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
-import Sidebar from '../components/dashboard/Sidebar';
-import Navbar from '../components/dashboard/Navbar';
+import React, { useEffect } from 'react';
+import Layout from '../pages/Layout';
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getMe } from "../utils/authSlice";
 
 const RentalAdmin = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isError, user } = useSelector((state) => state.auth);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+  useEffect(() => {
+    dispatch(getMe());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (isError) {
+      navigate("/");
+    }
+    if (user && user.role !== "admin") {
+      navigate("/dashboard");
+    }
+  }, [isError, user, navigate]);
 
   return (
-    <div className="flex">
-      <Sidebar isOpen={isOpen} />
-      <div className="flex-grow bg-gray-100">
-        <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />
-        {/* MAIN CONTENT */}
-        <div className="p-6 mt-16 md:ml-[250px]">
-          <h1 className="text-2xl font-bold mb-4">Histori Sewa Lahan</h1>
-          <p>Test text</p>
-        </div>
+    <Layout>
+      <div className="p-6 mt-16 md:ml-[250px]">
+        <h1 className="text-2xl font-bold mb-4">Data Rental</h1>
+        <p>Test text</p>
       </div>
-    </div>
+    </Layout>
   );
 };
 
