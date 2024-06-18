@@ -16,6 +16,7 @@ import RentalAdmin from './pages/RentalAdmin';
 import Profile from './components/main/Profile';
 import MainPage from './pages/main/MainPage';
 import FormAddLands from './components/dashboard/FormAddLands';
+import DetailPage from './pages/DetailPage';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           </>
         } />
         <Route path="/lands" element={<MainPage />} />
+        <Route path="/land-detail" element={<DetailPage />} />
         <Route path="/dashboard" element={<DashboardAdmin />} />
         <Route path="/lands-admin" element={<LandAdmin />} />
         <Route path="/lands-admin/add" element={<FormAddLands />} />
