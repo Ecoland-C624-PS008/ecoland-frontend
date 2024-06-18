@@ -11,12 +11,12 @@ const UsersList = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get("http://localhost:5000/users");
+    const response = await axios.get("https://submission-mgce-zaenalalfian-0.et.r.appspot.com/users");
     setUsers(response.data);
   };
 
   const deleteUser = async (userId) => {
-    await axios.delete(`http://localhost:5000/users/${userId}`);
+    await axios.delete(`https://submission-mgce-zaenalalfian-0.et.r.appspot.com/users/${userId}`);
     getUsers();
   };
 

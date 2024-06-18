@@ -26,7 +26,7 @@ const FormAddLands = () => {
     formData.append("image", image);
 
     try {
-      const response = await axios.post("http://localhost:5000/upload", formData, {
+      const response = await axios.post("https://submission-mgce-zaenalalfian-0.et.r.appspot.com/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
@@ -49,7 +49,7 @@ const FormAddLands = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/lands-admin", {
+      await axios.post("https://submission-mgce-zaenalalfian-0.et.r.appspot.com/lands-admin", {
         nama_lahan: nama_lahan,
         nama_pemilik: nama_pemilik,
         harga_sewa: harga_sewa,
