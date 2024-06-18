@@ -11,12 +11,12 @@ const UsersList = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get("https://submission-mgce-zaenalalfian-0.et.r.appspot.com/users");
+    const response = await axios.get("https://ecoland-backend-api.onrender.com/users");
     setUsers(response.data);
   };
 
   const deleteUser = async (userId) => {
-    await axios.delete(`https://submission-mgce-zaenalalfian-0.et.r.appspot.com/users/${userId}`);
+    await axios.delete(`https://ecoland-backend-api.onrender.com/users/${userId}`);
     getUsers();
   };
 

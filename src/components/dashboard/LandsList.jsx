@@ -11,12 +11,12 @@ const LandsList = () => {
   }, []);
 
   const getLands = async () => {
-    const response = await axios.get("https://submission-mgce-zaenalalfian-0.et.r.appspot.com/lands");
+    const response = await axios.get("https://ecoland-backend-api.onrender.com/lands");
     setLands(response.data);
   };
 
   const deleteLand = async (landId) => {
-    await axios.delete(`https://submission-mgce-zaenalalfian-0.et.r.appspot.com/${landId}`);
+    await axios.delete(`https://ecoland-backend-api.onrender.com/${landId}`);
     getLands();
   };
 
