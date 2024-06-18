@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { FaLeaf, FaSignOutAlt, FaUserCog } from 'react-icons/fa'; // Import FaUserCog for settings icon
+import { FaLeaf, FaSignOutAlt } from 'react-icons/fa'; // Import FaUserCog for settings icon
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../../utils/authSlice";
@@ -48,9 +48,13 @@ const Navbar = () => {
         </Link>
       </h1>
       <ul className='hidden md:flex'>
-      {user && user.role === "admin" && (
-        <li className='font-bold text-l p-2 text-white'><Link to="/dashboard" className='border-2 border-green-700 py-2 px-6 rounded-lg bg-green-700 text-white transition duration-300 ease-in-out hover:bg-green-800 hover:border-green-800'>Dashboard</Link></li>
-      )};
+        {/* INI HANYA TAMPIL UNTUK ADMIN */}
+        {user && user.role === "admin" && (
+          <li className='font-bold text-l p-2 text-white'><Link to="/dashboard" className='border-2 border-green-700 py-2 px-6 rounded-lg bg-green-700 text-white transition duration-300 ease-in-out hover:bg-green-800 hover:border-green-800'>Dashboard</Link></li>
+        )};
+
+        {/* BUAT MENU LAIN DI SINI */}
+      
         <button onClick={logout} className="bg-red-600 font-bold flex items-center py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-red-700 mr-[15px]">
           <FaSignOutAlt className="mr-2" />
             Keluar
