@@ -8,6 +8,8 @@ import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 import { MdDateRange } from "react-icons/md";
 import { TbHandClick } from "react-icons/tb";
 import cardDataArray from '../../data/dataLahan'; // Adjust the import path as necessary
+import PropTypes from "prop-types";
+
 import {
   Pagination,
   PaginationContent,
@@ -115,6 +117,13 @@ const MainPage = () => {
       </div>
     </div>
   );
+};
+
+
+PaginationSection.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
 };
 
 export default MainPage;
