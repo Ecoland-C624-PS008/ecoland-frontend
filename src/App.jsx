@@ -11,11 +11,12 @@ import Register from './components/Register';
 import DashboardAdmin from './pages/DashboardAdmin';
 import LandPage from './pages/LandPage';
 import TransactionAdmin from './pages/TransactionAdmin';
-import UserAdmin from './pages/UserAdmin';
+import UserPage from './pages/UserPage';
 import RentalAdmin from './pages/RentalAdmin';
 import Profile from './components/main/Profile';
 import MainPage from './pages/main/MainPage';
 import AddLandPage from './pages/AddLandPage';
+import AddUserPage from './pages/AddUserPage';
 import DetailPage from './pages/DetailPage';
 
 function App() {
@@ -48,9 +49,10 @@ function App() {
         <Route path="/dashboard" element={<DashboardAdmin />} />
         <Route path="/lands-admin" element={<LandPage />} />
         <Route path="/lands-admin/add" element={<AddLandPage />} />
+        <Route path="/users/add" element={<AddUserPage />} />
         <Route path="/transactions" element={<TransactionAdmin />} />
         <Route path="/land-rental" element={<RentalAdmin />} />
-        <Route path="/users" element={<UserAdmin />} />
+        <Route path="/users" element={<UserPage />} />
         <Route path="/profile" element={
           <>
             <Navbar />

@@ -4,8 +4,9 @@ import Layout from '../pages/Layout';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../utils/authSlice";
+import UsersList from '../components/dashboard/UsersList';
 
-const UserAdmin = () => {
+const UserPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError, user } = useSelector((state) => state.auth);
@@ -26,11 +27,10 @@ const UserAdmin = () => {
   return (
     <Layout>
       <div className="p-6 mt-16 md:ml-[250px]">
-        <h1 className="text-2xl font-bold mb-4">Data User</h1>
-        <p>Test text</p>
+        <UsersList />
       </div>
     </Layout>
   );
 };
 
-export default UserAdmin;
+export default UserPage;
