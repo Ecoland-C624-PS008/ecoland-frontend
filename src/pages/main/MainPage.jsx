@@ -10,6 +10,8 @@ import { MdDateRange } from "react-icons/md";
 import { TbHandClick } from "react-icons/tb";
 import cardDataArray from '../../data/dataLahan'; // Adjust the import path as necessary
 import PropTypes from "prop-types";
+import { format } from 'date-fns';
+import { Link } from "react-router-dom";
 
 import {
   Pagination,
@@ -90,13 +92,13 @@ const MainPage = () => {
       <Navbar />
       <div className="p-6 mt-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {currentItems.map((land, index) => (
+          {currentItems.map((land) => (
             <Card key={land.uuid}>
               <img src={land.image} alt={land.nama_lahan} className="w-full h-48 object-cover" />
               <CardHeader >
                 <div className="flex flex-row justify-between">
                 <CardTitle>{land.nama_lahan}</CardTitle>
-                <div className="bg-orange-500 text-white px-2 py-1 rounded-lg ml-2">
+                <div className="bg-orange-500 text-white px-2 py-2 rounded-lg ml-2">
                   {land.status}
                 </div>
                 </div>
@@ -107,13 +109,13 @@ const MainPage = () => {
               <CardContent>
                 {/* Additional content if needed */}
               </CardContent>
-              <CardFooter className="bg-slate-500 flex justify-between items-center text-white rounded-lg text-2xl p-2">
-                <div className="flex items-center">
-                  <MdDateRange /> Listed on: {land.createdAt}
+              <CardFooter className="py-2 bg-slate-500 flex justify-between items-center rounded-lg text-l p-2">
+                <div className="flex text-white items-center">
+                  <MdDateRange /> Diposting pada {format(new Date(land.createdAt), 'dd-MM-yyyy')}
                 </div>
-                <div className="flex items-center">
+                <div className="flex text-white font-bold items-center">
                   <TbHandClick />
-                  <button className="ml-2">LIHAT LAHAN</button>
+                  <Link to={`/lands/detail/${land.uuid}`}className="ml-2">LIHAT LAHAN</Link>
                 </div>
               </CardFooter>
             </Card>
