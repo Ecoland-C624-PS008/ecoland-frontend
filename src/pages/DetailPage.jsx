@@ -2,14 +2,12 @@ import React from 'react';
 
 const DetailPage = () => {
   return (
-    <div className='w-full py-[10rem] px-4 bg-white'>
-      <div className='flex justify-center items-center h-full'>
+    <div className='w-full py-[10rem] px-4 bg-white flex flex-col-2'>
+      <div className='flex justify-center items-center h-full '>
         <div className='px-5 bg-green-500 text-center rounded-lg text-white p-2'>
             <div className='border-b-8 p-2'>
           <h1 className='font-extrabold text-5xl pb-2'>Detail Lahan</h1>
           <img src='src/assets/lands.jpg' alt='sewa' className='rounded-lg' />
-
-          {/* Table */}
           <table className='mt-4 mx-auto border-4 text-4xl border-white font-bold '>
             <thead>
               <tr>
@@ -41,24 +39,25 @@ const DetailPage = () => {
             </tbody>
           </table>
           </div>
-          <div>
+          
+        </div>  
+      </div>
+      <div className='bg-green-500 rounded-lg' >
             <h1 className='text-center font-bold text-4xl p-2'>Sewa Lahan ini</h1>
-            <div className="mb-4 text-left px-[500px]">
+            <div className="mb-4 text-left px-[200px]">
             <label htmlFor="tanggal-awal-sewa" className="block text-white  font-bold mb-2 text-3xl">Tanggal Awal Sewa</label>
             <input id="tanggal-awal-sewa" type="date" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </div>
-            <div className="mb-4 text-left px-[500px]">
+            <div className="mb-4 text-left px-[200px]">
             <label htmlFor="tanggal-akhir-sewa" className="block text-white  font-bold mb-2 text-3xl">Tanggal Akhir Sewa</label>
             <input id="tanggal-akhir-sewa" type="date" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </div>
           <div className='flex justify-center'>
-  <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type='submit'>
-    Submit
-  </button>
-</div>
+            <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type='submit'>
+                Submit
+            </button>
+            </div>
           </div>
-        </div>  
-      </div>
     </div>
   );
 };
