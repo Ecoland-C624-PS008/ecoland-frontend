@@ -119,7 +119,6 @@ const MainPage = () => {
   );
 };
 
-
 PaginationSection.propTypes = {
   currentPage: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,
