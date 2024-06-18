@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../../utils/authSlice";
 import Navbar from "../../components/main/Navbar";
@@ -44,6 +45,8 @@ const PaginationSection = ({ currentPage, totalPages, onPageChange }) => {
 };
 
 const MainPage = () => {
+  const [lands, setLands] = useState([]);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError, user } = useSelector((state) => state.auth);
@@ -54,6 +57,16 @@ const MainPage = () => {
     dispatch(getMe());
   }, [dispatch]);
 
+  // FETCHING API DATA LAHAN
+  useEffect(() => {
+    getLands();
+  }, []);
+
+  const getLands = async () => {
+    const response = await axios.get("http://localhost:5000/lands");
+    setLands(response.data);
+  };
+
   useEffect(() => {
     if (isError) {
       navigate("/login");
@@ -61,7 +74,7 @@ const MainPage = () => {
   }, [isError, user, navigate]);
 
   const totalPages = Math.ceil(cardDataArray.length / ITEMS_PER_PAGE);
-  const currentItems = cardDataArray.slice(
+  const currentItems = lands.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
   );
@@ -77,26 +90,26 @@ const MainPage = () => {
       <Navbar />
       <div className="p-6 mt-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {currentItems.map((cardData, index) => (
-            <Card key={index}>
-              <img src={cardData.imageUrl} alt={cardData.title} className="w-full h-48 object-cover" />
+          {currentItems.map((land, index) => (
+            <Card key={land.uuid}>
+              <img src={land.image} alt={land.nama_lahan} className="w-full h-48 object-cover" />
               <CardHeader >
                 <div className="flex flex-row justify-between">
-                <CardTitle>{cardData.title}</CardTitle>
+                <CardTitle>{land.nama_lahan}</CardTitle>
                 <div className="bg-orange-500 text-white px-2 py-1 rounded-lg ml-2">
-                  KATEGORI
+                  {land.status}
                 </div>
                 </div>
               </CardHeader>
               <CardDescription className="px-4">
-                <h2>{cardData.description}</h2>
+                <h2>{land.keterangan}</h2>
               </CardDescription>
               <CardContent>
                 {/* Additional content if needed */}
               </CardContent>
               <CardFooter className="bg-slate-500 flex justify-between items-center text-white rounded-lg text-2xl p-2">
                 <div className="flex items-center">
-                  <MdDateRange /> Listed on: {cardData.dateListed}
+                  <MdDateRange /> Listed on: {land.createdAt}
                 </div>
                 <div className="flex items-center">
                   <TbHandClick />
