@@ -13,7 +13,6 @@ import PropTypes from "prop-types";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
