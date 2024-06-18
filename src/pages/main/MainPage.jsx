@@ -18,7 +18,7 @@ import {
   PaginationPrevious,
 } from "../../components/ui/pagination"
 
-const ITEMS_PER_PAGE = 6; // Adjust the number of items per page as needed
+const ITEMS_PER_PAGE = 9; // Adjust the number of items per page as needed
 
 const PaginationSection = ({ currentPage, totalPages, onPageChange }) => {
   return (
@@ -78,14 +78,18 @@ const MainPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {currentItems.map((cardData, index) => (
             <Card key={index}>
-              <div className="absolute text-white px-2 py-1 bg-orange-500 rounded-lg">KATEGORI</div>
-              <img src={cardData.imageUrl} alt={cardData.title} />
-              <CardHeader>
+              <img src={cardData.imageUrl} alt={cardData.title} className="w-full h-48 object-cover" />
+              <CardHeader >
+                <div className="flex flex-row justify-between">
                 <CardTitle>{cardData.title}</CardTitle>
-                <CardDescription>
-                  <h2>{cardData.description}</h2>
-                </CardDescription>
+                <div className="bg-orange-500 text-white px-2 py-1 rounded-lg ml-2">
+                  KATEGORI
+                </div>
+                </div>
               </CardHeader>
+              <CardDescription className="px-4">
+                <h2>{cardData.description}</h2>
+              </CardDescription>
               <CardContent>
                 {/* Additional content if needed */}
               </CardContent>
