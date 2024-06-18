@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <div className="flex">
         <Sidebar isOpen={isOpen} />
-        <div className="flex-grow bg-gray-100">
+        <div className="h-screen flex-grow bg-gray-100">
           <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />
           {/* Main content */}
           <main>{ children }</main>

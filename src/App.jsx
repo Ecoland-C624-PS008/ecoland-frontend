@@ -9,13 +9,13 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register'; 
 import DashboardAdmin from './pages/DashboardAdmin';
-import LandAdmin from './pages/LandAdmin';
+import LandPage from './pages/LandPage';
 import TransactionAdmin from './pages/TransactionAdmin';
 import UserAdmin from './pages/UserAdmin';
 import RentalAdmin from './pages/RentalAdmin';
 import Profile from './components/main/Profile';
 import MainPage from './pages/main/MainPage';
-import FormAddLands from './components/dashboard/FormAddLands';
+import AddLandPage from './pages/AddLandPage';
 import DetailPage from './pages/DetailPage';
 
 function App() {
@@ -46,8 +46,8 @@ function App() {
         <Route path="/lands" element={<MainPage />} />
         <Route path="/land-detail" element={<DetailPage />} />
         <Route path="/dashboard" element={<DashboardAdmin />} />
-        <Route path="/lands-admin" element={<LandAdmin />} />
-        <Route path="/lands-admin/add" element={<FormAddLands />} />
+        <Route path="/lands-admin" element={<LandPage />} />
+        <Route path="/lands-admin/add" element={<AddLandPage />} />
         <Route path="/transactions" element={<TransactionAdmin />} />
         <Route path="/land-rental" element={<RentalAdmin />} />
         <Route path="/users" element={<UserAdmin />} />
