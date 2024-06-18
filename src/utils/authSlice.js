@@ -11,7 +11,7 @@ const initialState = {
 
 export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI) => {
     try {
-        const response = await axios.post('https://submission-mgce-zaenalalfian-0.et.r.appspot.com/login', {
+        const response = await axios.post('https://ecoland-backend-api.onrender.com/login', {
             email: user.email,
             password: user.password,
         });
@@ -26,7 +26,7 @@ export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI
 
 export const RegisterUser = createAsyncThunk("user/RegisterUser", async(user, thunkAPI) => {
     try {
-        const response = await axios.post('https://submission-mgce-zaenalalfian-0.et.r.appspot.com/register', {
+        const response = await axios.post('https://ecoland-backend-api.onrender.com/register', {
             name: user.name,
             email: user.email,
             password: user.password
@@ -42,7 +42,7 @@ export const RegisterUser = createAsyncThunk("user/RegisterUser", async(user, th
 
 export const getMe = createAsyncThunk("user/getMe", async(_, thunkAPI) => {
     try {
-        const response = await axios.get('https://submission-mgce-zaenalalfian-0.et.r.appspot.com/me');
+        const response = await axios.get('https://ecoland-backend-api.onrender.com/me');
         return response.data;
     } catch (error) {
         if(error.response){
@@ -53,7 +53,7 @@ export const getMe = createAsyncThunk("user/getMe", async(_, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/LogOut", async() => {
-    await axios.delete('https://submission-mgce-zaenalalfian-0.et.r.appspot.com/logout');
+    await axios.delete('https://ecoland-backend-api.onrender.com/logout');
 });
 
 export const authSlice = createSlice({

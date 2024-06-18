@@ -65,7 +65,7 @@ const MainPage = () => {
   }, []);
 
   const getLands = async () => {
-    const response = await axios.get("https://submission-mgce-zaenalalfian-0.et.r.appspot.com/lands");
+    const response = await axios.get("https://ecoland-backend-api.onrender.com/lands");
     setLands(response.data);
   };
 
