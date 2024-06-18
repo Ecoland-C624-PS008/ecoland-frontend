@@ -19,7 +19,7 @@ import {
   PaginationPrevious,
 } from "../../components/ui/pagination"
 
-const ITEMS_PER_PAGE = 9; // Adjust the number of items per page as needed
+const ITEMS_PER_PAGE = 6; // Adjust the number of items per page as needed
 
 const PaginationSection = ({ currentPage, totalPages, onPageChange }) => {
   return (
