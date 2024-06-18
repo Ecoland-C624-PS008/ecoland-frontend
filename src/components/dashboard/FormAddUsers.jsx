@@ -16,7 +16,7 @@ const FormAddUsers = () => {
   const saveUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/users", {
+      await axios.post("https://submission-mgce-zaenalalfian-0.et.r.appspot.com/users", {
         name: name,
         email: email,
         password: password,
