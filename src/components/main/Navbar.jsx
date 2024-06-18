@@ -1,11 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-<<<<<<< HEAD
 import { FaLeaf, FaSignOutAlt } from 'react-icons/fa';
-=======
-import { FaLeaf, FaSignOutAlt } from 'react-icons/fa'; // Import FaUserCog for settings icon
->>>>>>> a9b4ba2319c67938fb7758c18476b5408d415fef
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../../utils/authSlice";
@@ -54,13 +50,18 @@ const Navbar = () => {
       <ul className='hidden md:flex'>
       {user && user.role === "admin" && (
         <li className='font-bold text-l p-2 text-white'><Link to="/dashboard" className='border-2 border-green-700 py-2 px-6 rounded-lg bg-green-700 text-white transition duration-300 ease-in-out hover:bg-green-800 hover:border-green-800'>Dashboard</Link></li>
-      )};
+      )}
         {/* INI HANYA TAMPIL UNTUK ADMIN */}
         {user && user.role === "admin" && (
           <li className='font-bold text-l p-2 text-white'><Link to="/dashboard" className='border-2 border-green-700 py-2 px-6 rounded-lg bg-green-700 text-white transition duration-300 ease-in-out hover:bg-green-800 hover:border-green-800'>Dashboard</Link></li>
         )}
 
         {/* BUAT MENU LAIN DI SINI */}
+        <li className='font-bold text-l p-2 text-white'>
+          <Link to="/my-account" className='border-2 border-green-700 py-2 px-6 rounded-lg bg-green-700 text-white transition duration-300 ease-in-out hover:bg-green-800 hover:border-green-800'>
+            Akun
+          </Link>
+          </li>
         <li className='font-bold text-l p-2 text-white'>
           <Link to="/settings" className='border-2 border-green-700 py-2 px-6 rounded-lg bg-green-700 text-white transition duration-300 ease-in-out hover:bg-green-800 hover:border-green-800'>
             Pengaturan
