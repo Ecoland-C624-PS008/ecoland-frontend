@@ -7,7 +7,8 @@ import Navbar from "../../components/main/Navbar";
 import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from '../../components/ui/card';
 import { MdDateRange } from "react-icons/md";
 import { TbHandClick } from "react-icons/tb";
-import cardDataArray from '../../data/dataLahan'; // Adjust the import path as necessary
+import cardDataArray from '../../data/dataLahan';
+ // Adjust the import path as necessary
 
 const MainPage = () => {
   const dispatch = useDispatch();
