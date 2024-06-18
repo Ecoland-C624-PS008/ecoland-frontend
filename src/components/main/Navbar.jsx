@@ -58,7 +58,7 @@ const Navbar = () => {
         {/* INI HANYA TAMPIL UNTUK ADMIN */}
         {user && user.role === "admin" && (
           <li className='font-bold text-l p-2 text-white'><Link to="/dashboard" className='border-2 border-green-700 py-2 px-6 rounded-lg bg-green-700 text-white transition duration-300 ease-in-out hover:bg-green-800 hover:border-green-800'>Dashboard</Link></li>
-        )};
+        )}
 
         {/* BUAT MENU LAIN DI SINI */}
         <li className='font-bold text-l p-2 text-white'>
