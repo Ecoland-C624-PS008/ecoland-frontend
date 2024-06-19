@@ -65,7 +65,7 @@ const MainPage = () => {
   }, []);
 
   const getLands = async () => {
-    const response = await axios.get("https://ecoland-backend-api.onrender.com/lands", {
+    const response = await axios.get("http://localhost:5000/lands", {
       withCredentials: true
   });
     setLands(response.data);
