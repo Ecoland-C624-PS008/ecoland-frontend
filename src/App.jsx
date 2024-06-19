@@ -16,7 +16,9 @@ import HistoryPage from './pages/HistoryPage';
 import Profile from './components/main/Profile';
 import MainPage from './pages/main/MainPage';
 import AddLandPage from './pages/AddLandPage';
+import EditLandPage from './pages/EditLandPage';
 import AddUserPage from './pages/AddUserPage';
+import EditUserPage from './pages/EditUserPage';
 import DetailPage from './pages/DetailPage';
 
 function App() {
@@ -49,7 +51,9 @@ function App() {
         <Route path="/dashboard" element={<DashboardAdmin />} />
         <Route path="/lands-admin" element={<LandPage />} />
         <Route path="/lands-admin/add" element={<AddLandPage />} />
+        <Route path="/lands-admin/edit/:id" element={<EditLandPage />} />
         <Route path="/users/add" element={<AddUserPage />} />
+        <Route path="/users/edit/:id" element={<EditUserPage />} />
         <Route path="/transactions" element={<TransactionAdmin />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/users" element={<UserPage />} />

@@ -11,12 +11,12 @@ const UsersList = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get("https://ecoland-backend-api.onrender.com/users");
+    const response = await axios.get("http://localhost:5000/users");
     setUsers(response.data);
   };
 
   const deleteUser = async (userId) => {
-    await axios.delete(`https://ecoland-backend-api.onrender.com/users/${userId}`);
+    await axios.delete(`http://localhost:5000/users/${userId}`);
     getUsers();
   };
 
