@@ -4,6 +4,7 @@ import Layout from './Layout';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../api/authSlice";
+import TransactionsList from '../components/dashboard/TransactionsList';
 
 const TransactionPage = () => {
   const dispatch = useDispatch();
@@ -26,8 +27,7 @@ const TransactionPage = () => {
   return (
     <Layout>
       <div className="p-6 mt-16 md:ml-[250px]">
-        <h1 className="text-2xl font-bold mb-4">Data Transaksi</h1>
-        <p>Test text</p>
+        <TransactionsList />
       </div>
     </Layout>
   );
