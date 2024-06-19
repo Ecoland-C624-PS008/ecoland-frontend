@@ -48,7 +48,7 @@ function App() {
           </>
         } />
         <Route path="/lands" element={<MainPage />} />
-        <Route path="/lands/detail" element={<DetailPage />} />
+        <Route path="/lands/detail/:id" element={<DetailPage />} />
         <Route path="/dashboard" element={<DashboardAdmin />} />
         <Route path="/lands-admin" element={<LandPage />} />
         <Route path="/lands-admin/add" element={<AddLandPage />} />
