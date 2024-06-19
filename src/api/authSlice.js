@@ -9,18 +9,11 @@ const initialState = {
     message: ""
 }
 
-
-
 export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI) => {
     try {
         const response = await axios.post('https://ecoland-backend-api.onrender.com/login', {
             email: user.email,
-            password: user.password,
-        }, {
-            withCredentials: true,
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}` // Add the authentication token to the headers
-            }
+            password: user.password
         });
         return response.data;
     } catch (error) {
@@ -37,8 +30,6 @@ export const RegisterUser = createAsyncThunk("user/RegisterUser", async(user, th
             name: user.name,
             email: user.email,
             password: user.password
-        }, {
-            withCredentials: true  // Tambahkan ini
         });
         return response.data;
     } catch (error) {
@@ -51,9 +42,7 @@ export const RegisterUser = createAsyncThunk("user/RegisterUser", async(user, th
 
 export const getMe = createAsyncThunk("user/getMe", async(_, thunkAPI) => {
     try {
-        const response = await axios.get('https://ecoland-backend-api.onrender.com/me', {
-            withCredentials: true
-        });
+        const response = await axios.get('https://ecoland-backend-api.onrender.com/me');
         return response.data;
     } catch (error) {
         if(error.response){
@@ -64,9 +53,7 @@ export const getMe = createAsyncThunk("user/getMe", async(_, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/LogOut", async() => {
-    await axios.delete('https://ecoland-backend-api.onrender.com/logout', {
-        withCredentials: true
-    });
+    await axios.delete('https://ecoland-backend-api.onrender.com/logout');
 });
 
 export const authSlice = createSlice({

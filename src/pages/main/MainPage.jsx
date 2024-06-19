@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../../utils/authSlice";
+import { getMe } from "../../api/authSlice";
 import Navbar from "../../components/main/Navbar";
 import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from '../../components/ui/card';
 import { MdDateRange } from "react-icons/md";
@@ -67,7 +67,7 @@ const MainPage = () => {
   const getLands = async () => {
     const response = await axios.get("https://ecoland-backend-api.onrender.com/lands", {
       withCredentials: true
-    });
+  });
     setLands(response.data);
   };
 

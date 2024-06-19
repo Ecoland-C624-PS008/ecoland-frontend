@@ -4,7 +4,7 @@ import Layout from "./Layout";
 import FormAddLands from "../components/dashboard/FormAddLands";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../utils/authSlice";
+import { getMe } from "../api/authSlice";
 
 const AddLandPage = () => {
   const dispatch = useDispatch();

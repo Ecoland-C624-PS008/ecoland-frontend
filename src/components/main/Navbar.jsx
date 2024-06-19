@@ -4,7 +4,7 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { FaLeaf, FaSignOutAlt } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { LogOut, reset } from "../../utils/authSlice";
+import { LogOut, reset } from "../../api/authSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link untuk membuat tautan
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { RegisterUser, reset } from "../utils/authSlice";
+import { RegisterUser, reset } from "../api/authSlice";
 
 const Register = () => {
   const [name, setName] = useState("");

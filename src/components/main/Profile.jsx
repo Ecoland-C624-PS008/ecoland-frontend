@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../../utils/authSlice";
+import { getMe } from "../../api/authSlice";
 
 const Profile = () => {
   const [username, setUsername] = useState('');
