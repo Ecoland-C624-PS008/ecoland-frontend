@@ -13,13 +13,14 @@ import LandPage from './pages/LandPage';
 import TransactionPage from './pages/TransactionPage';
 import UserPage from './pages/UserPage';
 import HistoryPage from './pages/HistoryPage';
-import Profile from './components/main/Profile';
+// import Profile from './components/main/Profile';
 import MainPage from './pages/main/MainPage';
 import AddLandPage from './pages/AddLandPage';
 import EditLandPage from './pages/EditLandPage';
 import AddUserPage from './pages/AddUserPage';
 import EditUserPage from './pages/EditUserPage';
 import DetailPage from './pages/DetailPage';
+// import NavbarMain from './components/main/Navbar';
 
 function App() {
   return (
@@ -57,12 +58,8 @@ function App() {
         <Route path="/transactions" element={<TransactionPage />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/users" element={<UserPage />} />
-        <Route path="/profile" element={
-          <>
-            <Navbar />
-            <Profile />
-          </>
-        } /> {}
+        {/* <Route path="/profile" element={<><NavbarMain /><Profile /></>} />  */}
+        {}
       </Routes>
     </Router>
   );

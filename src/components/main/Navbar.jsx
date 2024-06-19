@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { FaLeaf, FaSignOutAlt, FaWhatsapp } from 'react-icons/fa';
+import { FaLeaf, FaSignOutAlt } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../../api/authSlice";
@@ -57,17 +57,23 @@ const Navbar = () => {
           </li>
         )}
         {/* BUAT MENU LAIN DI SINI */}
-        <li className='font-bold text-l p-2 text-white'>
+        {/* <li className='font-bold text-l p-2 text-white'>
           <a href="https://wa.me/yourwhatsapplink" className='border-2 border-green-700 py-2 px-6 rounded-lg bg-green-700 text-white transition duration-300 ease-in-out hover:bg-green-800 hover:border-green-800 flex items-center'>
             <FaWhatsapp size={24} className='mr-2' />
             WhatsApp
           </a>
-        </li>
+        </li> */}
         {/* <li className='font-bold text-l p-2 text-white'>
           <Link to="/profile" className='flex items-center'>
             <img src="https://via.placeholder.com/32" alt="avatar" className='rounded-full w-8 h-8 mr-2'/>
           </Link>
         </li> */}
+
+        <li className='font-bold text-l p-2 text-white'>
+            <div className='py-2 px-6 rounded-lg text-white'>
+              <span>{user && user.name}</span>
+            </div>
+          </li>
         <button onClick={logout} className="bg-red-600 font-bold flex items-center py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-red-700 mr-[15px]">
           <FaSignOutAlt className="mr-2" />
           Keluar
