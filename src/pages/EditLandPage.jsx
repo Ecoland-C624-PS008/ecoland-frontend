@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 import Layout from "./Layout";
-import FormAddLands from "../components/dashboard/FormAddLands";
+import FormEditLands from "../components/dashboard/FormEditLands";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../api/authSlice";
 
-const AddLandPage = () => {
+const EditLandPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -22,9 +22,9 @@ const AddLandPage = () => {
   }, [isError, navigate]);
   return (
     <Layout>
-      <FormAddLands />
+      <FormEditLands />
     </Layout>
   );
 };
 
-export default AddLandPage;
+export default EditLandPage;

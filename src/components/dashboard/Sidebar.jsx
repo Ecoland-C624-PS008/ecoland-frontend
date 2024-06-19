@@ -2,9 +2,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { FaUserCircle, FaTachometerAlt, FaTree, FaExchangeAlt, FaFileContract, FaUsers, FaSignOutAlt } from 'react-icons/fa';
+import { FaUserCircle, FaTachometerAlt, FaTree, FaExchangeAlt, FaUsers, FaSignOutAlt } from 'react-icons/fa';
 import { useDispatch, useSelector } from "react-redux";
-import { LogOut, reset } from "../../utils/authSlice";
+import { LogOut, reset } from "../../api/authSlice";
 
 const Sidebar = ({ isOpen }) => {
   const dispatch = useDispatch();
@@ -45,12 +45,12 @@ const Sidebar = ({ isOpen }) => {
               Transactions
             </Link>
           </li>
-          <li className="mb-2">
-            <Link to="/land-rental" className="flex items-center p-4 hover:bg-gray-700">
+          {/* <li className="mb-2">
+            <Link to="/history" className="flex items-center p-4 hover:bg-gray-700">
               <FaFileContract className="mr-2" />
-              Land Rental
+              History
             </Link>
-          </li>
+          </li> */}
           <li className="mb-2">
             <Link to="/users" className="flex items-center p-4 hover:bg-gray-700">
               <FaUsers className="mr-2" />

@@ -1,11 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from 'react';
-import Layout from '../pages/Layout';
+import Layout from './Layout';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../utils/authSlice";
+import { getMe } from "../api/authSlice";
+import TransactionsList from '../components/dashboard/TransactionsList';
 
-const TransactionAdmin = () => {
+const TransactionPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError, user } = useSelector((state) => state.auth);
@@ -26,11 +27,10 @@ const TransactionAdmin = () => {
   return (
     <Layout>
       <div className="p-6 mt-16 md:ml-[250px]">
-        <h1 className="text-2xl font-bold mb-4">Data Transaksi</h1>
-        <p>Test text</p>
+        <TransactionsList />
       </div>
     </Layout>
   );
 };
 
-export default TransactionAdmin;
+export default TransactionPage;

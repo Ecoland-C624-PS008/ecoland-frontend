@@ -13,7 +13,7 @@ export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI
     try {
         const response = await axios.post('https://ecoland-backend-api.onrender.com/login', {
             email: user.email,
-            password: user.password,
+            password: user.password
         });
         return response.data;
     } catch (error) {

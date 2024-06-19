@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Layout from './Layout';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../utils/authSlice";
+import { getMe } from "../api/authSlice";
 import LandsList from '../components/dashboard/LandsList';
 
 const LandPage = () => {

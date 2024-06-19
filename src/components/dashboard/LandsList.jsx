@@ -16,7 +16,7 @@ const LandsList = () => {
   };
 
   const deleteLand = async (landId) => {
-    await axios.delete(`https://ecoland-backend-api.onrender.com/${landId}`);
+    await axios.delete(`https://ecoland-backend-api.onrender.com/lands-admin/${landId}`);
     getLands();
   };
 

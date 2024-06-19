@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from 'react';
-import Layout from '../pages/Layout';
+import Layout from './Layout';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../utils/authSlice";
+import { getMe } from "../api/authSlice";
 
-const RentalAdmin = () => {
+const HistoryPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError, user } = useSelector((state) => state.auth);
@@ -33,4 +33,4 @@ const RentalAdmin = () => {
   );
 };
 
-export default RentalAdmin;
+export default HistoryPage;

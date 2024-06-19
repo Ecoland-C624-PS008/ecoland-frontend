@@ -4,7 +4,7 @@ import Layout from "./Layout";
 import FormAddUsers from "../components/dashboard/FormAddUsers";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../utils/authSlice";
+import { getMe } from "../api/authSlice";
 
 const AddUserPage = () => {
   const dispatch = useDispatch();

@@ -10,14 +10,17 @@ import Login from './components/Login';
 import Register from './components/Register'; 
 import DashboardAdmin from './pages/DashboardAdmin';
 import LandPage from './pages/LandPage';
-import TransactionAdmin from './pages/TransactionAdmin';
+import TransactionPage from './pages/TransactionPage';
 import UserPage from './pages/UserPage';
-import RentalAdmin from './pages/RentalAdmin';
-import Profile from './components/main/Profile';
+import HistoryPage from './pages/HistoryPage';
+// import Profile from './components/main/Profile';
 import MainPage from './pages/main/MainPage';
 import AddLandPage from './pages/AddLandPage';
+import EditLandPage from './pages/EditLandPage';
 import AddUserPage from './pages/AddUserPage';
+import EditUserPage from './pages/EditUserPage';
 import DetailPage from './pages/DetailPage';
+// import NavbarMain from './components/main/Navbar';
 
 function App() {
   return (
@@ -45,20 +48,18 @@ function App() {
           </>
         } />
         <Route path="/lands" element={<MainPage />} />
-        <Route path="/lands/detail" element={<DetailPage />} />
+        <Route path="/lands/detail/:id" element={<DetailPage />} />
         <Route path="/dashboard" element={<DashboardAdmin />} />
         <Route path="/lands-admin" element={<LandPage />} />
         <Route path="/lands-admin/add" element={<AddLandPage />} />
+        <Route path="/lands-admin/edit/:id" element={<EditLandPage />} />
         <Route path="/users/add" element={<AddUserPage />} />
-        <Route path="/transactions" element={<TransactionAdmin />} />
-        <Route path="/land-rental" element={<RentalAdmin />} />
+        <Route path="/users/edit/:id" element={<EditUserPage />} />
+        <Route path="/transactions" element={<TransactionPage />} />
+        <Route path="/history" element={<HistoryPage />} />
         <Route path="/users" element={<UserPage />} />
-        <Route path="/profile" element={
-          <>
-            <Navbar />
-            <Profile />
-          </>
-        } /> {}
+        {/* <Route path="/profile" element={<><NavbarMain /><Profile /></>} />  */}
+        {}
       </Routes>
     </Router>
   );

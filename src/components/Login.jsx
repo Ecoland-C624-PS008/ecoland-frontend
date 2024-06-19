@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'; 
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { LoginUser, reset } from "../utils/authSlice";
+import { LoginUser, reset } from "../api/authSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
