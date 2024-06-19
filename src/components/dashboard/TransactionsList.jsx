@@ -11,12 +11,12 @@ const TransactionsList = () => {
   }, []);
 
   const getTransactions = async () => {
-    const response = await axios.get("http://localhost:5000/transactions");
+    const response = await axios.get("https://ecoland-backend-api.onrender.com/transactions");
     setTransactions(response.data);
   };
 
   const deleteTransaction = async (landId) => {
-    await axios.delete(`http://localhost:5000/transactions/${landId}`);
+    await axios.delete(`https://ecoland-backend-api.onrender.com/transactions/${landId}`);
     getTransactions();
   };
 

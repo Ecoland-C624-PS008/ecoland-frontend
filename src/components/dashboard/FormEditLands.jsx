@@ -22,7 +22,7 @@ const FormEditLands = () => {
     const getLandById = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/lands/${id}`
+          `https://ecoland-backend-api.onrender.com/lands/${id}`
         );
         setNamaLahan(response.data.nama_lahan);
         setNamaPemilik(response.data.nama_pemilik);
@@ -57,7 +57,7 @@ const FormEditLands = () => {
     if (status) data.status = status;
 
     try {
-      await axios.patch(`http://localhost:5000/lands/${id}`, data);
+      await axios.patch(`https://ecoland-backend-api.onrender.com/lands/${id}`, data);
       navigate("/lands-admin");
     } catch (error) {
       if (error.response) {
