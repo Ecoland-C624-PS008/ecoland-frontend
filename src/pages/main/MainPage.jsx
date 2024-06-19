@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -8,7 +7,6 @@ import Navbar from "../../components/main/Navbar";
 import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from '../../components/ui/card';
 import { MdDateRange } from "react-icons/md";
 import { TbHandClick } from "react-icons/tb";
-import cardDataArray from '../../data/dataLahan'; // Adjust the import path as necessary
 import PropTypes from "prop-types";
 import { format } from 'date-fns';
 import { Link } from "react-router-dom";
@@ -20,9 +18,9 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "../../components/ui/pagination"
+} from "../../components/ui/pagination";
 
-const ITEMS_PER_PAGE = 6; // Adjust the number of items per page as needed
+const ITEMS_PER_PAGE = 6;
 
 const PaginationSection = ({ currentPage, totalPages, onPageChange }) => {
   return (
@@ -59,15 +57,14 @@ const MainPage = () => {
     dispatch(getMe());
   }, [dispatch]);
 
-  // FETCHING API DATA LAHAN
   useEffect(() => {
     getLands();
   }, []);
 
   const getLands = async () => {
     const response = await axios.get("http://localhost:5000/lands", {
-      withCredentials: true
-  });
+      withCredentials: true,
+    });
     setLands(response.data);
   };
 
@@ -77,7 +74,7 @@ const MainPage = () => {
     }
   }, [isError, user, navigate]);
 
-  const totalPages = Math.ceil(cardDataArray.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(lands.length / ITEMS_PER_PAGE);
   const currentItems = lands.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
@@ -95,29 +92,29 @@ const MainPage = () => {
       <div className="p-6 mt-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {currentItems.map((land) => (
-            <Card key={land.uuid}>
+            <Card key={land.uuid} className="flex flex-col h-full">
               <img src={land.image} alt={land.nama_lahan} className="w-full h-48 object-cover" />
-              <CardHeader >
+              <CardHeader>
                 <div className="flex flex-row justify-between">
-                <CardTitle>{land.nama_lahan}</CardTitle>
-                <div className="bg-orange-500 text-white px-2 py-2 rounded-lg ml-2">
-                  {land.status}
-                </div>
+                  <CardTitle className="flex-grow">{land.nama_lahan}</CardTitle>
+                  <div className="bg-orange-500 text-white px-2 py-2 rounded-lg ml-2 whitespace-nowrap flex-shrink-0">
+                    {land.status}
+                  </div>
                 </div>
               </CardHeader>
               <CardDescription className="px-4">
                 <h2>{land.keterangan}</h2>
               </CardDescription>
-              <CardContent>
+              <CardContent className="flex-grow">
                 {/* Additional content if needed */}
               </CardContent>
-              <CardFooter className="py-2 bg-slate-500 flex justify-between items-center rounded-lg text-l p-2">
+              <CardFooter className="py-2 bg-slate-500 flex justify-between items-center rounded-lg text-l p-2 mt-auto">
                 <div className="flex text-white items-center">
                   <MdDateRange /> Diposting pada {format(new Date(land.createdAt), 'dd-MM-yyyy')}
                 </div>
                 <div className="flex text-white font-bold items-center">
                   <TbHandClick />
-                  <Link to={`/lands/detail/${land.uuid}`}className="ml-2">LIHAT LAHAN</Link>
+                  <Link to={`/lands/detail/${land.uuid}`} className="ml-2">LIHAT LAHAN</Link>
                 </div>
               </CardFooter>
             </Card>
