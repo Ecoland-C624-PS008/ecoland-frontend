@@ -10,7 +10,7 @@ import Login from './components/Login';
 import Register from './components/Register'; 
 import DashboardAdmin from './pages/DashboardAdmin';
 import LandPage from './pages/LandPage';
-import TransactionAdmin from './pages/TransactionAdmin';
+import TransactionAdmin from './pages/TransactionPage';
 import UserPage from './pages/UserPage';
 import RentalAdmin from './pages/RentalAdmin';
 import Profile from './components/main/Profile';
