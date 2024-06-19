@@ -12,7 +12,7 @@ import DashboardAdmin from './pages/DashboardAdmin';
 import LandPage from './pages/LandPage';
 import TransactionAdmin from './pages/TransactionPage';
 import UserPage from './pages/UserPage';
-import RentalAdmin from './pages/RentalAdmin';
+import HistoryPage from './pages/HistoryPage';
 import Profile from './components/main/Profile';
 import MainPage from './pages/main/MainPage';
 import AddLandPage from './pages/AddLandPage';
@@ -51,7 +51,7 @@ function App() {
         <Route path="/lands-admin/add" element={<AddLandPage />} />
         <Route path="/users/add" element={<AddUserPage />} />
         <Route path="/transactions" element={<TransactionAdmin />} />
-        <Route path="/land-rental" element={<RentalAdmin />} />
+        <Route path="/history" element={<HistoryPage />} />
         <Route path="/users" element={<UserPage />} />
         <Route path="/profile" element={
           <>

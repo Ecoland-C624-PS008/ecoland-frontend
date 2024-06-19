@@ -46,9 +46,9 @@ const Sidebar = ({ isOpen }) => {
             </Link>
           </li>
           <li className="mb-2">
-            <Link to="/land-rental" className="flex items-center p-4 hover:bg-gray-700">
+            <Link to="/history" className="flex items-center p-4 hover:bg-gray-700">
               <FaFileContract className="mr-2" />
-              Land Rental
+              History
             </Link>
           </li>
           <li className="mb-2">
